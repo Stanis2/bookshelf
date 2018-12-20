@@ -1,0 +1,32 @@
+<!--
+  ~ Copyright (c) 2018 Dimitrijs Fedotovs
+  ~ This code is licensed under MIT license
+  ~ (see LICENSE.txt for details)
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html">
+<ui:composition>
+    <h:form>
+        <ul>
+            <ui:fragment rendered="#{request.isUserInRole('USER')}">
+                <li><h:link value="User space" outcome="/app/index.xhtml"/></li>
+            </ui:fragment>
+            <ui:fragment rendered="#{request.isUserInRole('MANAGER')}">
+                <li><h:link value="Manager space" outcome="/manage/index.xhtml"/></li>
+            </ui:fragment>
+            <ui:fragment rendered="#{request.isUserInRole('ADMIN')}">
+                <li><h:link value="Admin space" outcome="/admin/index.xhtml"/></li>
+            </ui:fragment>
+            <ui:fragment rendered="#{empty currentUser.user}">
+                <li><h:link value="Login" outcome="/app/index.xhtml"/></li>
+                <li><h:link value="Register" outcome="/registration.xhtml"/></li>
+            </ui:fragment>
+            <ui:fragment rendered="#{not empty currentUser.user}">
+                <li><h:commandLink value="Logout" action="#{loginBean.logout}"/></li>
+            </ui:fragment>
+        </ul>
+    </h:form>
+</ui:composition>
+</html>
