@@ -20,7 +20,7 @@ public class BookEntity implements Serializable {
     @Column(name = "book_year", nullable = false)
     private int year;
     @Column(name = "book_description", length = 2000)
-    private int description;
+    private String description;
 
     public Long getId() {
         return id;
@@ -62,11 +62,11 @@ public class BookEntity implements Serializable {
         this.year = year;
     }
 
-    public int getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(int description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 }
