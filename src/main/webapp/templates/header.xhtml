@@ -6,7 +6,9 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
 <ui:composition>
     <h:form>
         <ul>
@@ -15,9 +17,11 @@
             </ui:fragment>
             <ui:fragment rendered="#{request.isUserInRole('MANAGER')}">
                 <li><h:link value="Manager space" outcome="/manage/index.xhtml"/></li>
+                <li><h:link value="Add a new book" outcome="/manage/new-book.xhtml"/></li>
             </ui:fragment>
             <ui:fragment rendered="#{request.isUserInRole('ADMIN')}">
                 <li><h:link value="Admin space" outcome="/admin/index.xhtml"/></li>
+                <li><h:link value="User list" outcome="/admin/user-list.xhtml"/></li>
             </ui:fragment>
             <ui:fragment rendered="#{empty currentUser.user}">
                 <li><h:link value="Login" outcome="/app/index.xhtml"/></li>
