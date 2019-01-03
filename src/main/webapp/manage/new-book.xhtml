@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <ui:composition template="/templates/main.xhtml">
     <ui:define name="content">
@@ -40,7 +40,9 @@
                 <h:inputTextarea id="Description" value="#{createBookBean.book.description}"/>
             </p>
             <p>
-                <h:commandButton action="#{createBookBean.createBook}" value="Add new"/>
+                <h:commandButton action="#{createBookBean.createBook}" value="Add new">
+                    <f:ajax render="@form" execute="@form"/>
+                </h:commandButton>
             </p>
         </h:form>
     </ui:define>
