@@ -14,6 +14,7 @@
 </h:head>
 <h:body style="background-color: steelblue">
     <header>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
         <ui:insert name="header">
             <ui:include src="header.xhtml"/>
         </ui:insert>
@@ -21,5 +22,19 @@
     <section>
         <ui:insert name="content"/>
     </section>
+    <style>
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            height: 50px;
+        }
+    </style>
 </h:body>
 </html>

@@ -1,0 +1,50 @@
+<!--
+  ~ Copyright (c) 2018 Dimitrijs Fedotovs
+  ~ This code is licensed under MIT license
+  ~ (see LICENSE.txt for details)
+  -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/main.xhtml">
+    <ui:define name="content">
+
+        <f:metadata>
+            <f:viewParam name="id" value="#{singleBookBean.id}"/>
+            <f:viewAction action="#{singleBookBean.openBook}"/>
+        </f:metadata>
+
+        <h1 class="w3-center w3-wide">#{singleBookBean.book.title}</h1>
+
+        <div class="w3-container">
+        <table class="w3-table w3-striped">
+            <tr>
+                <td>Author:</td>
+                <td>#{singleBookBean.book.author}</td>
+            </tr>
+            <tr>
+                <td>ISBN:</td>
+                <td>#{singleBookBean.book.isbn}</td>
+            </tr>
+            <tr>
+                <td>Year:</td>
+                <td>#{singleBookBean.book.year}</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>#{singleBookBean.book.description}</td>
+            </tr>
+        </table>
+        </div>
+
+        <h:form>
+            <h:commandButton value="Reserve" action="#{bookReservationBean.reserve(singleBookBean.id)}"/>
+        </h:form>
+
+    </ui:define>
+</ui:composition>
+
+</html>
