@@ -13,35 +13,35 @@
     <ui:define name="content">
 
         <f:metadata>
-            <f:viewParam name="id" value="#{singleBookBean.id}"/>
-            <f:viewAction action="#{singleBookBean.openBook}"/>
+            <f:viewParam name="id" value="#{bookBean.id}"/>
+            <f:viewAction action="#{bookBean.openBook}"/>
         </f:metadata>
 
-        <h1 class="w3-center w3-wide">#{singleBookBean.book.title}</h1>
+        <h1 class="w3-center w3-wide">#{bookBean.book.title}</h1>
 
         <div class="w3-container">
         <table class="w3-table w3-striped">
             <tr>
                 <td>Author:</td>
-                <td>#{singleBookBean.book.author}</td>
+                <td>#{bookBean.book.author}</td>
             </tr>
             <tr>
                 <td>ISBN:</td>
-                <td>#{singleBookBean.book.isbn}</td>
+                <td>#{bookBean.book.isbn}</td>
             </tr>
             <tr>
                 <td>Year:</td>
-                <td>#{singleBookBean.book.year}</td>
+                <td>#{bookBean.book.year}</td>
             </tr>
             <tr>
                 <td>Description:</td>
-                <td>#{singleBookBean.book.description}</td>
+                <td>#{bookBean.book.description}</td>
             </tr>
         </table>
         </div>
 
         <h:form>
-            <h:commandButton value="Reserve" action="#{bookReservationBean.reserve(singleBookBean.id)}"/>
+            <h:commandButton value="Reserve" action="#{bookBean.reserve(bookBean.id)}"/>
         </h:form>
 
     </ui:define>

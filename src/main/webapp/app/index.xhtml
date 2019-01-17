@@ -15,21 +15,21 @@
 
         <h:form>
 
-            <h:inputText value="#{bookBean.term}"/>
-            <h:commandButton value="Search" action="#{bookBean.doSearch}">
+            <h:inputText value="#{booksListBean.term}"/>
+            <h:commandButton value="Search" action="#{booksListBean.doSearch}">
                 <f:ajax execute="@form" render="@form"/>
             </h:commandButton>
 
-            <h:dataTable value="#{bookBean.books}" var="book">
-                <h:column rendered="#{not empty bookBean.books}">
+            <h:dataTable value="#{booksListBean.books}" var="book">
+                <h:column rendered="#{not empty booksListBean.books}">
                     <f:facet name="header">Author</f:facet>
                     #{book.author}
                 </h:column>
-                <h:column rendered="#{not empty bookBean.books}">
+                <h:column rendered="#{not empty booksListBean.books}">
                     <f:facet name="header">Title</f:facet>
                     #{book.title}
                 </h:column>
-                <h:column rendered="#{empty bookBean.books}">
+                <h:column rendered="#{empty booksListBean.books}">
                     <f:facet name="header">Not found</f:facet>
                 </h:column>
                 <h:column>

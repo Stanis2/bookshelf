@@ -11,7 +11,7 @@ import java.util.List;
 
 @Named
 @SessionScoped
-public class UserBean implements Serializable {
+public class UserListBean implements Serializable {
     @PersistenceContext
     private EntityManager em;
 

@@ -12,35 +12,35 @@
 <ui:composition template="/templates/main.xhtml">
     <ui:define name="content">
         <h:form id="Input">
-            <ui:fragment rendered="#{createBookBean.created}">
+            <ui:fragment rendered="#{newBookBean.created}">
                 <h2 class="w3-center w3-wide">A need book added.</h2>
             </ui:fragment>
             <p>
                 <h:outputLabel value="Title: "/>
-                <h:inputText id="Title" value="#{createBookBean.book.title}"/>
+                <h:inputText id="Title" value="#{newBookBean.book.title}"/>
                 <h:messages for="Title"/>
             </p>
             <p>
                 <h:outputLabel value="Author: "/>
-                <h:inputText id="Author" value="#{createBookBean.book.author}"/>
+                <h:inputText id="Author" value="#{newBookBean.book.author}"/>
                 <h:messages for="Author"/>
             </p>
             <p>
                 <h:outputLabel value="Year: "/>
-                <h:inputText id="Year" value="#{createBookBean.book.year}"/>
+                <h:inputText id="Year" value="#{newBookBean.book.year}"/>
                 <h:messages for="Year"/>
             </p>
             <p>
                 <h:outputLabel value="ISBN: "/>
-                <h:inputText id="ISBN" value="#{createBookBean.book.isbn}"/>
+                <h:inputText id="ISBN" value="#{newBookBean.book.isbn}"/>
                 <h:messages for="ISBN"/>
             </p>
             <p>
                 <h:outputLabel value="Description: "/> <br/>
-                <h:inputTextarea id="Description" value="#{createBookBean.book.description}"/>
+                <h:inputTextarea id="Description" value="#{newBookBean.book.description}"/>
             </p>
             <p>
-                <h:commandButton action="#{createBookBean.createBook}" value="Add new">
+                <h:commandButton action="#{newBookBean.createBook}" value="Add new">
                     <f:ajax render="@form" execute="@form"/>
                 </h:commandButton>
             </p>

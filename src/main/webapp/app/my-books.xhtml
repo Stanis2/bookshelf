@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/templates/main.xhtml">
+    <ui:define name="content">
+
+        <f:metadata>
+            <f:viewAction action="#{myBooksBean.prepare}"/>
+        </f:metadata>
+
+        <h2>Available books</h2>
+        <h:form>
+        <h:dataTable value="#{myBooksBean.availableBooks}" var="avail">
+        <h:column>
+            <f:facet name="header">Reservation Id</f:facet>
+            #{avail.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Book Title</f:facet>
+            #{avail.book.title}
+        </h:column>
+            <h:column>
+                <f:facet name="header">Status</f:facet>
+                #{avail.status}
+            </h:column>
+        </h:dataTable>
+    </h:form>
+
+        <h2>Queued books</h2>
+        <h:form>
+            <h:dataTable value="#{myBooksBean.inQueueBooks}" var="queue">
+                <h:column>
+                    <f:facet name="header">Reservation Id</f:facet>
+                    #{queue.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Book Title</f:facet>
+                    #{queue.book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Status</f:facet>
+                    #{queue.status}
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+        <h2>Taken books</h2>
+        <h:form>
+            <h:dataTable value="#{myBooksBean.takenBooks}" var="taken">
+                <h:column>
+                    <f:facet name="header">Reservation Id</f:facet>
+                    #{taken.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Book Title</f:facet>
+                    #{taken.book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Status</f:facet>
+                    #{taken.status}
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
+</html>

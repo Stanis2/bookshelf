@@ -13,7 +13,8 @@
     <h:form>
         <ul>
             <ui:fragment rendered="#{request.isUserInRole('USER')}">
-                <li><h:link value="User space" outcome="/app/index.xhtml"/></li>
+                <li><h:link value="Book list" outcome="/app/index.xhtml"/></li>
+                <li><h:link value="My reservations" outcome="/app/my-books.xhtml"/></li>
             </ui:fragment>
             <ui:fragment rendered="#{request.isUserInRole('MANAGER')}">
                 <li><h:link value="Manager space" outcome="/manage/index.xhtml"/></li>
