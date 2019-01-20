@@ -15,7 +15,7 @@
 
         <h2>Available books</h2>
         <h:form>
-        <h:dataTable value="#{myBooksBean.availableBooks}" var="avail">
+        <h:dataTable styleClass="table" value="#{myBooksBean.availableBooks}" var="avail">
         <h:column>
             <f:facet name="header">Reservation Id</f:facet>
             #{avail.id}
@@ -33,7 +33,7 @@
 
         <h2>Queued books</h2>
         <h:form>
-            <h:dataTable value="#{myBooksBean.inQueueBooks}" var="queue">
+            <h:dataTable styleClass="table" value="#{myBooksBean.inQueueBooks}" var="queue">
                 <h:column>
                     <f:facet name="header">Reservation Id</f:facet>
                     #{queue.id}
@@ -51,7 +51,7 @@
 
         <h2>Taken books</h2>
         <h:form>
-            <h:dataTable value="#{myBooksBean.takenBooks}" var="taken">
+            <h:dataTable styleClass="table" value="#{myBooksBean.takenBooks}" var="taken">
                 <h:column>
                     <f:facet name="header">Reservation Id</f:facet>
                     #{taken.id}

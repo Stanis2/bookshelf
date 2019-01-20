@@ -13,23 +13,23 @@
     <h:form>
         <ul>
             <ui:fragment rendered="#{request.isUserInRole('USER')}">
-                <li><h:link value="Book list" outcome="/app/index.xhtml"/></li>
-                <li><h:link value="My reservations" outcome="/app/my-books.xhtml"/></li>
+                <h:button style="width: 175px" styleClass="w3-button w3-blue-grey" value="Book list" outcome="/app/index.xhtml"/>
+                <h:button style="width: 175px" styleClass="w3-button w3-blue-grey" value="My reservations" outcome="/app/my-books.xhtml"/>
             </ui:fragment>
             <ui:fragment rendered="#{request.isUserInRole('MANAGER')}">
-                <li><h:link value="Manager space" outcome="/manage/index.xhtml"/></li>
-                <li><h:link value="Add a new book" outcome="/manage/new-book.xhtml"/></li>
+                <h:button style="width: 175px" styleClass="w3-button w3-blue-grey" value="Manager space" outcome="/manage/index.xhtml"/>
+                <h:button style="width: 175px" styleClass="w3-button w3-blue-grey" value="Add a new book" outcome="/manage/new-book.xhtml"/>
             </ui:fragment>
             <ui:fragment rendered="#{request.isUserInRole('ADMIN')}">
-                <li><h:link value="Admin space" outcome="/admin/index.xhtml"/></li>
-                <li><h:link value="User list" outcome="/admin/user-list.xhtml"/></li>
+                <h:button style="width: 175px" styleClass="w3-button w3-blue-grey" value="Admin space" outcome="/admin/index.xhtml"/>
+                <h:button style="width: 175px" styleClass="w3-button w3-blue-grey" value="User list" outcome="/admin/user-list.xhtml"/>
             </ui:fragment>
             <ui:fragment rendered="#{empty currentUser.user}">
-                <li><h:link value="Login" outcome="/app/index.xhtml"/></li>
-                <li><h:link value="Register" outcome="/registration.xhtml"/></li>
+                <h:button style="width: 175px" styleClass="w3-button w3-blue-grey" value="Login" outcome="/app/index.xhtml"/>
+                <h:button style="width: 175px" styleClass="w3-button w3-blue-grey" value="Register" outcome="/registration.xhtml"/>
             </ui:fragment>
             <ui:fragment rendered="#{not empty currentUser.user}">
-                <li><h:commandLink value="Logout" action="#{loginBean.logout}"/></li>
+                <h:commandButton style="width: 175px" styleClass="w3-button w3-blue-grey" value="Logout" action="#{loginBean.logout}"/>
             </ui:fragment>
         </ul>
     </h:form>

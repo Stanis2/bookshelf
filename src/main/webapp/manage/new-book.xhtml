@@ -12,12 +12,15 @@
 <ui:composition template="/templates/main.xhtml">
     <ui:define name="content">
         <h:form id="Input">
+
             <ui:fragment rendered="#{newBookBean.created}">
-                <h2 class="w3-center w3-wide">A need book added.</h2>
+                <h2>A new book added.</h2>
             </ui:fragment>
+
+            <h:panelGroup styleClass="searchForm">
             <p>
                 <h:outputLabel value="Title: "/>
-                <h:inputText id="Title" value="#{newBookBean.book.title}"/>
+                <h:inputText  id="Title" value="#{newBookBean.book.title}"/>
                 <h:messages for="Title"/>
             </p>
             <p>
@@ -40,10 +43,12 @@
                 <h:inputTextarea id="Description" value="#{newBookBean.book.description}"/>
             </p>
             <p>
-                <h:commandButton action="#{newBookBean.createBook}" value="Add new">
+                <h:commandButton style="width: 175px" styleClass="w3-button w3-blue-grey" action="#{newBookBean.createBook}" value="Add new">
                     <f:ajax render="@form" execute="@form"/>
                 </h:commandButton>
             </p>
+            </h:panelGroup>
+
         </h:form>
     </ui:define>
 </ui:composition>

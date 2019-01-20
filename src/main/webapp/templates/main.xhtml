@@ -12,7 +12,7 @@
 <h:head>
     <title>Book My Shelf</title>
 </h:head>
-<h:body style="background-color: steelblue">
+<h:body styleClass="w3-light-grey">
     <header>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
         <ui:insert name="header">
@@ -25,15 +25,34 @@
     <style>
         table, td, th {
             border: 1px solid black;
+            padding: 10px;
         }
 
-        table {
+        .table {
             border-collapse: collapse;
-            width: 100%;
+            width: 50%;
+            padding: 10px;
+            alignment: center;
+            margin: 0px auto;
         }
 
         th {
             height: 50px;
+        }
+
+        .searchForm {
+            display: block;
+            text-align:center;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            text-align:center;
+        }
+
+        ul {
+            text-align:center;
+            padding-bottom: 15px;
         }
     </style>
 </h:body>

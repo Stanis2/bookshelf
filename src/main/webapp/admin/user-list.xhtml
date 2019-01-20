@@ -15,12 +15,14 @@
 
         <h:form>
 
-            <h:inputText value="#{userListBean.name}"/>
-            <h:commandButton value="Search" action="#{userListBean.doSearch}">
+            <h:panelGroup styleClass="searchForm">
+            <h:inputText styleClass="w3-input w3-center" value="#{userListBean.name}"/>
+            <h:commandButton style="width: 175px" styleClass="w3-button w3-blue-grey" value="Search" action="#{userListBean.doSearch}">
                 <f:ajax execute="@form" render="@form"/>
             </h:commandButton>
+            </h:panelGroup>
 
-            <h:dataTable value="#{userListBean.users}" var="user">
+            <h:dataTable styleClass="table" value="#{userListBean.users}" var="user">
                 <h:column rendered="#{not empty userListBean.users}">
                     <f:facet name="header">User</f:facet>
                     #{user.loginName}

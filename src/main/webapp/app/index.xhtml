@@ -15,12 +15,14 @@
 
         <h:form>
 
-            <h:inputText value="#{booksListBean.term}"/>
-            <h:commandButton value="Search" action="#{booksListBean.doSearch}">
+            <h:panelGroup styleClass="searchForm">
+            <h:inputText styleClass="w3-input w3-center" value="#{booksListBean.term}"/>
+            <h:commandButton style="width: 175px" styleClass="w3-button w3-blue-grey" value="Search" action="#{booksListBean.doSearch}">
                 <f:ajax execute="@form" render="@form"/>
             </h:commandButton>
+            </h:panelGroup>
 
-            <h:dataTable value="#{booksListBean.books}" var="book">
+            <h:dataTable styleClass="table" value="#{booksListBean.books}" var="book">
                 <h:column rendered="#{not empty booksListBean.books}">
                     <f:facet name="header">Author</f:facet>
                     #{book.author}
@@ -39,6 +41,7 @@
                     </h:outputLink>
                 </h:column>
             </h:dataTable>
+
         </h:form>
     </ui:define>
 </ui:composition>
