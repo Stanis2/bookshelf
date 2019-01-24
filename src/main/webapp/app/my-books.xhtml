@@ -69,18 +69,18 @@
 
         <h2>History</h2>
         <h:form>
-            <h:dataTable styleClass="table" value="#{myBooksBean.closedBooksResult}" var="taken">
+            <h:dataTable styleClass="table" value="#{myBooksBean.closedBooksResult}" var="hist">
                 <h:column>
                     <f:facet name="header">Reservation Id</f:facet>
-                    #{taken.id}
+                    #{hist.id}
                 </h:column>
                 <h:column>
                     <f:facet name="header">Book Title</f:facet>
-                    #{taken.book.title}
+                    #{hist.book.title}
                 </h:column>
                 <h:column>
                     <f:facet name="header">Status</f:facet>
-                    #{taken.status}
+                    #{hist.status}
                 </h:column>
             </h:dataTable>
         </h:form>
