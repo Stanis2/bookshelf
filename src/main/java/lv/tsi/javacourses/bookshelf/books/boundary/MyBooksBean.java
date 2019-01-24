@@ -24,11 +24,13 @@ public class MyBooksBean implements Serializable {
     private List<ReservationEntity> availableResult;
     private List<ReservationEntity> inQueueResult;
     private List<ReservationEntity> takenBooksResult;
+    private List<ReservationEntity> closedBooksResult;
 
     public void prepare() {
         availableResult = new ArrayList<>();
         inQueueResult = new ArrayList<>();
         takenBooksResult = new ArrayList<>();
+        closedBooksResult = new ArrayList<>();
         List<ReservationEntity> userReservations = em.createQuery("select r from Reservation r where r.user = :user and r.status = 'ACTIVE'", ReservationEntity.class)
                 .setParameter("user", currentUser.getUser()).getResultList();
 
@@ -46,6 +48,9 @@ public class MyBooksBean implements Serializable {
 
         takenBooksResult = em.createQuery("select r from Reservation r where r.user = :user and r.status = 'TAKEN'", ReservationEntity.class)
                 .setParameter("user", currentUser.getUser()).getResultList();
+
+        closedBooksResult = em.createQuery("select r from Reservation r where r.user = :user and r.status = 'CLOSED'", ReservationEntity.class)
+                .setParameter("user", currentUser.getUser()).getResultList();
     }
 
     public List<ReservationEntity> getAvailableBooks () {
@@ -60,4 +65,7 @@ public class MyBooksBean implements Serializable {
         return takenBooksResult;
     }
 
+    public List<ReservationEntity> getClosedBooksResult() {
+        return closedBooksResult;
+    }
 }

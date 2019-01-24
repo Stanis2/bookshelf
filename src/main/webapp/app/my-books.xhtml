@@ -66,6 +66,24 @@
                 </h:column>
             </h:dataTable>
         </h:form>
+
+        <h2>History</h2>
+        <h:form>
+            <h:dataTable styleClass="table" value="#{myBooksBean.closedBooksResult}" var="taken">
+                <h:column>
+                    <f:facet name="header">Reservation Id</f:facet>
+                    #{taken.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Book Title</f:facet>
+                    #{taken.book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Status</f:facet>
+                    #{taken.status}
+                </h:column>
+            </h:dataTable>
+        </h:form>
     </ui:define>
 </ui:composition>
 
