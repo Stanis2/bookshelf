@@ -15,18 +15,18 @@
 
         <h2>Available books</h2>
         <h:form>
-        <h:dataTable styleClass="table" value="#{myBooksBean.availableBooks}" var="avail">
+        <h:dataTable styleClass="table" value="#{myBooksBean.availableBooks}" var="res">
         <h:column>
             <f:facet name="header">Reservation Id</f:facet>
-            #{avail.id}
+            #{res.id}
         </h:column>
         <h:column>
             <f:facet name="header">Book Title</f:facet>
-            #{avail.book.title}
+            #{res.book.title}
         </h:column>
             <h:column>
                 <f:facet name="header">Status</f:facet>
-                #{avail.status}
+                #{res.status}
             </h:column>
         </h:dataTable>
     </h:form>

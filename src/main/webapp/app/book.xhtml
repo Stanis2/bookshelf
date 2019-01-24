@@ -12,6 +12,7 @@
 <ui:composition template="/templates/main.xhtml">
     <ui:define name="content">
 
+        <h:panelGroup styleClass="searchForm">
         <f:metadata>
             <f:viewParam name="id" value="#{bookBean.id}"/>
             <f:viewAction action="#{bookBean.openBook}"/>
@@ -20,7 +21,7 @@
         <h1 class="w3-center w3-wide">#{bookBean.book.title}</h1>
 
         <div class="w3-container">
-        <table class="w3-table w3-striped">
+        <table class="table">
             <tr>
                 <td>Author:</td>
                 <td>#{bookBean.book.author}</td>
@@ -41,8 +42,9 @@
         </div>
 
         <h:form>
-            <h:commandButton value="Reserve" action="#{bookBean.reserve(bookBean.id)}"/>
+            <h:commandButton style="width: 175px" styleClass="w3-button w3-blue-grey" value="Reserve" action="#{bookBean.reserve(bookBean.id)}"/>
         </h:form>
+        </h:panelGroup>
 
     </ui:define>
 </ui:composition>

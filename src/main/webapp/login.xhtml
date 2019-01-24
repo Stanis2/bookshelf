@@ -14,6 +14,7 @@
     <ui:define name="content">
         <h:form id="loginForm">
             <h:messages/>
+            <h:panelGroup styleClass="searchForm">
             <p>
                 <h:outputLabel value="Login name" for="loginTxt"/><br/>
                 <h:inputText id="loginTxt" value="#{loginBean.loginName}"/>
@@ -23,10 +24,11 @@
                 <h:inputSecret id="pwdTxt" value="#{loginBean.password}"/>
             </p>
             <p>
-                <h:commandButton id="loginBtn" action="#{loginBean.login}" value="Login">
+                <h:commandButton style="width: 175px" styleClass="w3-button w3-blue-grey" id="loginBtn" action="#{loginBean.login}" value="Login">
                     <f:ajax execute="@form" render="@form"/>
                 </h:commandButton>
             </p>
+            </h:panelGroup>
             <h:outputScript rendered="#{not empty currentUser.user}">
                 location.reload();
             </h:outputScript>

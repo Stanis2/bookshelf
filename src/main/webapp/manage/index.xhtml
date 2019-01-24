@@ -7,11 +7,91 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <ui:composition template="/templates/main.xhtml">
     <ui:define name="content">
-        <h2><h:outputLabel value="Manager's space"/></h2>
+
+        <h:form>
+
+        <f:metadata>
+            <f:viewAction action="#{managerBean.reservations}"/>
+        </f:metadata>
+
+        <h2>Reservations</h2>
+            <h:dataTable styleClass="table" value="#{managerBean.bookReservation}" var="res">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{res.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">User</f:facet>
+                    #{res.user.loginName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Book Title</f:facet>
+                    #{res.book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Status</f:facet>
+                    #{res.status}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Option</f:facet>
+                    <h:commandButton style="width: 175px" styleClass="w3-button w3-blue-grey" action="#{managerBean.giveBook(res)}" value="Give book">
+                        <f:ajax render="@form" execute="@form"/>
+                    </h:commandButton>
+                </h:column>
+            </h:dataTable>
+
+            <h2>Given books</h2>
+            <h:dataTable styleClass="table" value="#{managerBean.takenBooks}" var="taken">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{taken.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">User</f:facet>
+                    #{taken.user.loginName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Book Title</f:facet>
+                    #{taken.book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Status</f:facet>
+                    #{taken.status}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Option</f:facet>
+                    <h:commandButton style="width: 175px" styleClass="w3-button w3-blue-grey" action="#{managerBean.takeBook(taken)}" value="Take book">
+                        <f:ajax render="@form" execute="@form"/>
+                    </h:commandButton>
+                </h:column>
+            </h:dataTable>
+
+            <h2>Returned books</h2>
+            <h:dataTable styleClass="table" value="#{managerBean.closedBooks}" var="closed">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{closed.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">User</f:facet>
+                    #{closed.user.loginName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Book Title</f:facet>
+                    #{closed.book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Status</f:facet>
+                    #{closed.status}
+                </h:column>
+            </h:dataTable>
+
+        </h:form>
+
     </ui:define>
 </ui:composition>
 
