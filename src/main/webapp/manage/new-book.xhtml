@@ -43,7 +43,7 @@
                 <h:inputTextarea id="Description" value="#{newBookBean.book.description}"/>
             </p>
             <p>
-                <h:commandButton style="width: 175px" styleClass="w3-button w3-blue-grey" action="#{newBookBean.createBook}" value="Add new">
+                <h:commandButton style="width: 175px" styleClass="w3-button w3-blue-grey w3-margin" action="#{newBookBean.createBook}" value="Add new">
                     <f:ajax render="@form" execute="@form"/>
                 </h:commandButton>
             </p>

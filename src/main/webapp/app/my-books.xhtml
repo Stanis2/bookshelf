@@ -15,7 +15,7 @@
 
         <h2>Available books</h2>
         <h:form>
-        <h:dataTable styleClass="table" value="#{myBooksBean.availableBooks}" var="res">
+        <h:dataTable styleClass="table w3-table-all w3-hoverable w3-centered" value="#{myBooksBean.availableBooks}" var="res">
         <h:column>
             <f:facet name="header">Reservation Id</f:facet>
             #{res.id}
@@ -33,7 +33,7 @@
 
         <h2>Queued books</h2>
         <h:form>
-            <h:dataTable styleClass="table" value="#{myBooksBean.inQueueBooks}" var="queue">
+            <h:dataTable styleClass="table w3-table-all w3-hoverable w3-centered" value="#{myBooksBean.inQueueBooks}" var="queue">
                 <h:column>
                     <f:facet name="header">Reservation Id</f:facet>
                     #{queue.id}
@@ -51,7 +51,7 @@
 
         <h2>Taken books</h2>
         <h:form>
-            <h:dataTable styleClass="table" value="#{myBooksBean.takenBooks}" var="taken">
+            <h:dataTable styleClass="table w3-table-all w3-hoverable w3-centered" value="#{myBooksBean.takenBooks}" var="taken">
                 <h:column>
                     <f:facet name="header">Reservation Id</f:facet>
                     #{taken.id}
@@ -69,7 +69,7 @@
 
         <h2>History</h2>
         <h:form>
-            <h:dataTable styleClass="table" value="#{myBooksBean.closedBooksResult}" var="hist">
+            <h:dataTable styleClass="table w3-table-all w3-hoverable w3-centered" value="#{myBooksBean.closedBooksResult}" var="hist">
                 <h:column>
                     <f:facet name="header">Reservation Id</f:facet>
                     #{hist.id}

@@ -19,7 +19,7 @@
         </f:metadata>
 
         <h2>Reservations</h2>
-            <h:dataTable styleClass="table" value="#{managerBean.bookReservation}" var="res">
+            <h:dataTable styleClass="table w3-table-all w3-hoverable w3-centered" value="#{managerBean.bookReservation}" var="res">
                 <h:column>
                     <f:facet name="header">Id</f:facet>
                     #{res.id}
@@ -45,7 +45,7 @@
             </h:dataTable>
 
             <h2>Given books</h2>
-            <h:dataTable styleClass="table" value="#{managerBean.takenBooks}" var="taken">
+            <h:dataTable styleClass="table w3-table-all w3-hoverable w3-centered" value="#{managerBean.takenBooks}" var="taken">
                 <h:column>
                     <f:facet name="header">Id</f:facet>
                     #{taken.id}
@@ -71,7 +71,7 @@
             </h:dataTable>
 
             <h2>Returned books</h2>
-            <h:dataTable styleClass="table" value="#{managerBean.closedBooks}" var="closed">
+            <h:dataTable styleClass="table w3-table-all w3-hoverable w3-centered" value="#{managerBean.closedBooks}" var="closed">
                 <h:column>
                     <f:facet name="header">Id</f:facet>
                     #{closed.id}
